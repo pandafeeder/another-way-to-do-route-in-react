@@ -23,7 +23,7 @@ const route = [
       },
       {
         path:'/:topicID',
-        action: context => (<Topic params={context.params} />)
+        action: context => (<div><LinkList/><hr/><Topics params={context.params} /></div>)
       }
     ]
   }
@@ -45,6 +45,7 @@ const Topics = props => (
     {props.params ? <div>topic:</div> :<div>Select a topic:</div>}
     <li><Link to='/topics/react-router'>topci1</Link></li>
     <li><Link to='/topics/universal-router'>topci2</Link></li>
+    {props.params ? <Topic params={props.params}/>: null}
   </div>
 );
 const Topic = props => (
